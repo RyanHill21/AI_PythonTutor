@@ -3,16 +3,12 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 
-# Load environment variables
 load_dotenv()
 
-# Configure Gemini
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-# Create model
 model = genai.GenerativeModel("gemini-2.5-flash")
 
-# Streamlit app
 st.title("AI Python Tutor")
 
 st.sidebar.title("Tutor Modules")
@@ -26,7 +22,6 @@ st.sidebar.write("""
 
 st.write("Welcome to your beginner-friendly AI tutor!")
 
-# Tutoring modes
 mode = st.selectbox(
     "Choose a tutoring mode:",
     [
@@ -38,10 +33,8 @@ mode = st.selectbox(
     ]
 )
 
-# User input
 user_input = st.text_area("Enter your question or code:")
 
-# Generate response
 if st.button("Get Tutor Response"):
 
     if user_input.strip() == "":
