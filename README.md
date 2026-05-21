@@ -12,4 +12,4 @@ Features:
 Technologies Used:
 - Python
 - Streamlit
-- Gemini API
+- Google API
